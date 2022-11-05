@@ -82,7 +82,7 @@ class Window:
 
     # 打开目录
     def slot_open_folder(self):
-        setting = QSettings("./setting.ini", QSettings.IniFormat)
+        setting = QSettings(os.path.join(MAIN_PATH, "config/setting.ini"), QSettings.IniFormat)
         last_dir = setting.value("LastDir")
         if last_dir is None:
             last_dir = './'
